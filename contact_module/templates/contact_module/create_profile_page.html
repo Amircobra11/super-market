@@ -1,0 +1,42 @@
+{% extends 'shared/_layout.html' %}
+
+{% block title %}
+      ثبت پروفایل
+{% endblock %}
+
+{% block content %}
+    <div id="contact-page" class="container">
+        <div class="bg">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="contact-form">
+                        <h2 class="title text-center">ثبت پروفایل</h2>
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form row" action="{% url 'create_profile' %}"
+                              method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class="form-group col-md-12">
+                                {% comment %}<input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">{% endcomment %}
+                                <button type="submit" class="btn btn-primary pull-right">ارسال</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="contact-info">
+                        <h2 class="title text-center">اطلاعات تماس</h2>
+                        <address>
+                            <p>گروه آریاآوارشرق</p>
+                            <p>ایـران -خراسان جنوبی- بیرجند</p>
+                            <p>پارک علم و فناوری- طبـقه 1 - پلاک 406</p>
+                            <p>تلفن تماس : 1169 629 0930</p>
+                            <p>فکس : 1169 629 0930</p>
+                            <p style="font-family: tahoma;">ایمیـل : amir.sisi.cobra11.com@gmail.com</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
